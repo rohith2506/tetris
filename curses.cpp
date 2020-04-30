@@ -8,26 +8,16 @@
 
 using namespace std;
 
-void func(WINDOW *window, vector<string> arr) {
-    for (int i = 0; i < arr.size(); i++) {
-        for(int j=0; j < arr[i].size(); j++) {
-            waddch(window, arr[i][j]);
-        }
-    }
-}
-
 int main() {
     initscr();
-    noecho();
-    curs_set(FALSE);
-    WINDOW * win = newwin(100, 100, 10, 10);
-    vector<string> arr = {"hello", "bye"};
+    
     while(1) {
-        clear();
-        func(win, arr);
+        int nh, nw;
+        getmaxyx(stdscr, nh, nw);
+        mvprintw(5, 10, "current screen position: %d, %d", nh, nw); 
         refresh();
-        usleep(DELAY);
     }
+    
     endwin();
     return 0;
 }
