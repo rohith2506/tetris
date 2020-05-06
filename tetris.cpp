@@ -22,7 +22,6 @@ int boardStartPositionX, boardStartPositionY;
 // screen width
 int nScreenHeight, nScreenWidth;
 
-
 // check the board constraints
 bool doesBoardFit() {
     // setup the position of the header
@@ -55,17 +54,6 @@ void createBoard() {
             if(i == boardHeight - 1) tetrisGameBoard[i][j] = 'X';
         }
     }
-}
-
-
-//
-void createTetrominoPieces() {
-    vector<string> straightPiece = { "AAAA", "----", "----", "----" };
-    vector<string> LPiece = { "A---", "AAA-", "----", "----" };
-    vector<string> invertedLPiece = { "---A", "-AAA", "----", "----" };
-    vector<string> squarePiece;
-
-    tetrominoPieces.push_back(straightPiece);
 }
 
 int main() { 
