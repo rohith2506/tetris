@@ -35,29 +35,44 @@ class StraightPiece {
         }
     }
 
-    void rotatePiece(int angle) {
+    void displayPiece() {
+        for(int row=0; row<BOARD_SIZE; row++) {
+            for(int col=0; col<BOARD_SIZE; col++) {
+                cout << piece[row][col];
+            }
+            cout << endl;
+        }
+    }
+
+    void rotatePiece(char direction) {
         clearPiece();
-        if(angle / 90 == 0) {
+        if(direction == 'w') {
             int row = 1;
             for(int col=0; col<BOARD_SIZE; col++)
                 piece[row][col] = 'A';
-        } else if(angle / 90 == 1) {
+        } else if(direction == 'd') {
             int col = 2;
             for(int row=0; row<BOARD_SIZE; row++) 
                 piece[row][col] = 'A';
-        } else if(angle / 90 == 2) {
+        } else if(direction == 's') {
             int row = 2;
             for(int col=0; col<BOARD_SIZE; col++)
                 piece[row][col] = 'A';
-        } else { 
+        } else if(direction == 'a') { 
             int col = 1;
             for(int row=0; row<BOARD_SIZE; row++)
                 piece[row][col] = 'A';
         }
+        displayPiece();
     }
 };
 
-
-
-
-
+int main() {
+    StraightPiece s;
+    while(true) {
+        char direction;
+        cin >> direction;
+        s.rotatePiece(direction);
+    }
+    return 0;
+}

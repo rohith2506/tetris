@@ -62,7 +62,7 @@ int main() {
     // create the board
     createBoard();
     // create tetromino pieces
-    createTetrominoPieces();
+    // createTetrominoPieces();
 
     int ch;
     while(1) {
@@ -79,7 +79,7 @@ int main() {
         mvprintw(headerPositionY, headerPositionX, "TETRIS");
     
         // print the board
-        printGame(tetrisGameBoard, tetrominoPieces);
+        // printGame(tetrisGameBoard, tetrominoPieces);
         
         // finally print the content
         refresh();
